@@ -1,0 +1,11 @@
+{
+  "folders": [
+	{
+		"name": "htmlcsscourse",
+		"path": ".."
+	}
+],
+  "settings": {
+    "files.autoSave": "afterDelay"
+  }
+}

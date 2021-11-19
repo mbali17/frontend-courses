@@ -1,0 +1,196 @@
+/*
+1. CSS supports inheritance which means that property set for a parent element can be is inherited by the child and can be overriden as well. But, not all properties are inherited. the properties inherited are usually for the text.
+2. Universal selector (*) allows settting properties that are needed for all the elements. However, this alows the properties to be overriden by the ohter rules.
+3. Margin: This is used to create space between elements.To create space between the elements always prefer margin-botton
+4. Padding: This is used to create space within the element.
+5. An element can either be block element or an inline element . A block element occupies the complete space and does not allow any other element. However, the inline element only occupies the necessary space for the content and the next element starts right beside it.
+6. display: Using this property we can make an inline element behave like a block element (set display:block) and a block element into an inline element (set display:in-line). There is one other value callled inline-block, this allows the element to behave like a inline and act like a block element. Also, an inline element does not support margin-top and bottom, it only supports margin horizontally.
+7. Position: By default the elements are positioned according to the HTML written which is called the normal flow. If the elements are needed to be placed in a certain location which is not in the normal flow of the document. We can use the position property. When an element is marked with position property having value absolute we would also need to set the values for top, bottom, left, and right accordingly. Also, we would also need to set the parent of the element where this absolutely positioned elment is relative to. However, the HTML of the element can be added anywhere in the HTML
+8. Pseudo elements: These elements do not occurr in the HTML but, can be styled like one. There are selected using "::"
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: #444;
+  font-size: 16px;
+  position: relative;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+p,
+li {
+} */
+
+h1,
+h2,
+h3 {
+  color: rgba(16, 152, 173, 0.856);
+}
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+li {
+  font-size: 20px;
+}
+
+article {
+  margin-bottom: 40px;
+}
+/* footer p {
+  font-size: 16px;
+} */
+
+/*instead of using elements and the html structure to style which creates a dependency we can use classes or id selector.
+article header p {
+  font-style: italic;
+} */
+/* Id is not the recommended way to style as there cannot be mulitple elements with same id. */
+#author {
+  font-size: 18px;
+  font-style: italic;
+}
+
+#copyRight {
+  font-size: 16px;
+}
+
+.related_author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related {
+  list-style: none;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  margin-bottom: 60px;
+  height: 80px;
+}
+.post-header {
+  margin-bottom: 40px;
+}
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 0;
+  width: 500px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Pseudo classes */
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+/* To style a specific element of a list. The value passed can be a number, or keyword like odd,even*/
+li:nth-child(2) {
+  /* color:rebeccapurple */
+}
+/*Styling links.
+NOte: The order of the pseudo classes needs to be in the same order as below which is link, visited, hover, active
+Refer: https://www.codecademy.com/forum_questions/517d35f0c50c3d60c9003502
+*/
+/* Targets any anchor tag that has the href attribute. */
+a:link {
+  text-decoration: none;
+  color: rgba(16, 152, 173, 0.856);
+  margin-right: 10px;
+}
+/* Targets the links that have already been clicked */
+a:visited {
+}
+/* As the name suggests this is applicable when the user is hovering over the link. */
+a:hover {
+}
+/* Applies when the link  is clicked and the user is being re-directed. */
+a:active {
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
+}
+.container {
+  width: 800px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 0 auto;
+}
+
+.like {
+  padding: 20px;
+  font-weight: bold;
+  font-size: 22px;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/* This is used to select adjacent elements.*/
+/* h3+p::first-line{} */
+
+h2::after {
+  content: "TOP";
+  font-size: 16px;
+  background-color: #ffe70e;
+  color: black;
+  padding: 7px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
+}

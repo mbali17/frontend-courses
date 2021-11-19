@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid</title>
+    <style>
+      .el--1 {
+        background-color: blueviolet;
+      }
+      .el--2 {
+        background-color: orangered;
+      }
+      .el--3 {
+        background-color: green;
+        height: 150px;
+      }
+      .el--4 {
+        background-color: goldenrod;
+      }
+      .el--5 {
+        background-color: palevioletred;
+      }
+      .el--6 {
+        background-color: steelblue;
+      }
+      .el--7 {
+        background-color: yellow;
+      }
+      .el--8 {
+        background-color: crimson;
+      }
+
+      .container--1 {
+        /* STARTER */
+        font-family: sans-serif;
+        background-color: #ddd;
+        font-size: 40px;
+        margin: 40px;
+
+        /* CSS GRID */
+        /* Property used to mark a container as grid */
+        display: grid;
+        /* Defines the number columns to create. This would also enable dividing the content into as many rows as required. */
+        /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+        grid-template-columns: repeat(4, 1fr);
+        /* By default the hieght of the row is the height of the maximum content or the height set for one of the element on the row. Following property overrides this behavior by definfing the row height. This is only applicatble to the grid items that have no height set.*/
+        /*grid-template-rows: 75px;*/
+        /* Similar to flex, we can define the distance between the elements using the following property.*/
+        /* gap: 50px; */
+        /* Unlike flex where we could only define the gap between elements in 1 dimension we can define gap in both the dimenstion in grid.*/
+        column-gap: 10px;
+        row-gap: 10px;
+        /*Temporary*/
+        display: none;
+      }
+      /*Changing the order of the elements. Different from where they appear in the HTML*/
+      .el--8 {
+        /*Following properties are only used in the grid items.*/
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+      .el--2 {
+        /*
+          NOTE: If the  row and column difference is 1 then we can use single value.
+          e.g:
+          grid-column: 1;
+          grid-row: 2;
+          To span multiple rows and columns you can use the span keyword.
+          grid-column:2 span 2;
+          grid-row: 1 span 3;
+          To span across a entire row or column. we can use the following trick.
+          grid-column: 1/-1
+          how to read this property.
+          place the grid item identified by the coordinates begining/ending.
+        */
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+      .container--2 {
+        /* STARTER */
+        display: none;
+        font-family: sans-serif;
+        background-color: black;
+        font-size: 40px;
+        margin: 100px;
+
+        width: 1000px;
+        height: 600px;
+
+        /* CSS GRID */
+        display: grid;
+        grid-template-columns: 125px 200px 125px 200px;
+        gap: 30px;
+        /*Align container items*/
+        justify-content: center;
+        align-content: center;
+
+        /*Align itemss within the cells of the container*/
+        justify-items: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container--1">
+      <div class="el el--1">(1) HTML</div>
+      <div class="el el--2">(2) and</div>
+      <div class="el el--3">(3) CSS</div>
+      <div class="el el--4">(4) are</div>
+      <div class="el el--5">(5) amazing</div>
+      <div class="el el--6">(6) languages</div>
+      <!--/* <div class="el el--7">(7) to</div> */-->
+      <div class="el el--8">(8) learn</div>
+    </div>
+
+    <div class="container--2">
+      <div class="el el--1">(1)</div>
+      <div class="el el--3">(3)</div>
+      <div class="el el--4">(4)</div>
+      <div class="el el--5">(5)</div>
+      <div class="el el--6">(6)</div>
+      <div class="el el--7">(7)</div>
+    </div>
+  </body>
+</html>

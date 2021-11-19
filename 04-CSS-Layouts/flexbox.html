@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+    <style>
+      .el--1 {
+        background-color: blueviolet;
+      }
+      .el--2 {
+        background-color: orangered;
+      }
+      .el--3 {
+        background-color: green;
+        height: 150px;
+      }
+      .el--4 {
+        background-color: goldenrod;
+      }
+      .el--5 {
+        background-color: palevioletred;
+      }
+      .el--6 {
+        background-color: steelblue;
+      }
+      .el--7 {
+        background-color: yellow;
+      }
+      .el--8 {
+        background-color: crimson;
+      } 
+
+      .container {
+        /* STARTER */
+        font-family: sans-serif;
+        background-color: #ddd;
+        font-size: 40px;
+        /* margin: 40px; */
+
+        /* FLEXBOX */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Previously,to create spaces between flex items in the container, we would use margin on all the elements and remove the additional padding from the last element. However, now we can use gap property */
+        gap: 30px;
+      }
+      <!--/* We can also style the flex items separately. */-->
+      .el--1 {
+        align-self: start;
+        order: 7; /*Change the orfer of the flex items without changing the DOM. */
+        /* The common properties used for designing individual flex items are
+            <proeprty>:<default_value>
+            flex-basis:0; --> This Property is used to set the minimum width.
+            flex-shrink:1; --> This specifies whether the flex items should shrink to fit into the container.
+            flex-grow:0; --> This property specifies should the elements in the container grow to fill the container.
+            flex: 0 0 220px; --> This is a short hand for flex properties on an element where the first property is the values for flex-shrink, second propert is for flex-grow and      the final value is for the flex-basis.
+
+        */
+      .el{
+
+      }
+    </style>
+  </head>
+  <body>
+    <!--/* Flex container: any container marked with display:flex property */-->
+    <div class="container">
+      <!--/* Flex items: occupy the required space for the content within the element and the height occupied is whatever is the max height of a single element in the flex items. */-->
+      <div class="el el--1">HTML</div>
+      <div class="el el--2">and</div>
+      <div class="el el--3">CSS</div>
+      <div class="el el--4">are</div>
+      <div class="el el--5">amazing</div>
+      <div class="el el--6">languages</div>
+      <div class="el el--7">to</div>
+      <div class="el el--8">learn</div>
+    </div>
+  </body>
+</html>
