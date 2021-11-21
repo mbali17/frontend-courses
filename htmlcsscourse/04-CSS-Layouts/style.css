@@ -106,7 +106,7 @@ article header p {
 .main-header {
   background-color: #f7f7f7;
   padding: 20px 40px;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   /* height: 80px; */
 }
 .post-header {
@@ -254,12 +254,12 @@ footer {
   align-items: center;
   margin-bottom: 10px;
 }
-.row {
+/* .row {
   display: flex;
   gap: 75px;
   margin-bottom: 60px;
   align-items: flex-start;
-}
+} */
 article {
   /* Grow as much as the space is available. */
   flex: 1;
@@ -287,4 +287,29 @@ aside {
   font-size: 14px;
   font-weight: normal;
   font-style: italic;
+}
+
+
+/*
+  Grid using CSS grid. It is a best practice to have all the configs related to the grid in the container.
+
+*/
+.container{
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
+}
+
+.main-header{
+  grid-column: 1/-1;
+}
+
+.related-posts{
+
+}
+
+footer{
+  grid-column: 1/-1;
 }
